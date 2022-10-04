@@ -4,6 +4,7 @@ const bodyParser = require('body-parser')
 const dotEnv = require ('dotenv')
 const recipesRoute = require('./routes/recipes')
 const userRoute = require('./routes/user')
+const loginRoute = require('./routes/login')
 
 dotEnv.config() 
 
@@ -24,7 +25,8 @@ rootRouterV1.use('/recipes/:recipeId', recipesRoute)
 rootRouterV1.use('/recipes/:recipeId', recipesRoute)
 rootRouterV1.use('/recipes/:recipedId', recipesRoute)
 rootRouterV1.use('/users', userRoute )
-rootRouterV1.use('/users/login', userRoute)
+// rootRouterV1.use('/users/login', userRoute)
+rootRouterV1.use('/login', loginRoute)
 
 //connect to DB
 console.log('Connecting to database...');
